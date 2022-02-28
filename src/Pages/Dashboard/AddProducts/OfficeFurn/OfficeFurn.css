@@ -1,0 +1,34 @@
+
+.form-container{
+    margin-top: 50px;
+    padding: 30px;
+    border: 2px solid gray;
+    box-shadow: 3px 5px 8px rgb(36, 37, 37);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form-container input, textarea{
+    width: 60%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black !important;
+}
+
+.bttn{
+    border: none;
+    padding: 8px 12px;
+    background-color: tomato;
+    color: white;
+    font-size: 400;
+    font-weight: 500;
+}

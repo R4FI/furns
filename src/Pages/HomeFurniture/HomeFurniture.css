@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+   
+}
+.offercard{
+        margin-top: 125px;
+}
+
+
+.offer-card{
+    height: 100%;
+    width: 110%;
+    margin:15px;
+    box-shadow: 3px 6px 10px lightgray ;
+    transition: 0.5s;
+    padding: 45px;
+   
+}
+.offer-img img{
+    width:100%;
+}
+.offer-info{
+    padding: 5px;
+}
