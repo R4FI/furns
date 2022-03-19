@@ -4,6 +4,7 @@ import about from "../../Images/Best-Furniture-Hatil.jpg";
 import Header from '../Shared/Header/Header';
 import './AboutUs.css';
 import Feedbacks from './Feedbacks/Feedbacks';
+
 const AboutUs = () => {
     return (
         <div>
@@ -13,7 +14,7 @@ const AboutUs = () => {
                 <img src={about} alt="" className="w-75"/>
 
                     <Feedbacks></Feedbacks>
-
+                    
             </Container>
         </div>
     );

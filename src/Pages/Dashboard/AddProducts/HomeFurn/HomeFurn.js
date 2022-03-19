@@ -25,7 +25,7 @@ const HomeFurn = () => {
                 <input type="number" {...register("rating", { max: 5 })} placeholder="rating" />
                 <input {...register("image")} placeholder="image url" />
 
-                {/* <input type="submit" /> */}
+              
                 <button className="bttn" type="submit">Submit</button>
             </form>
             </Container>

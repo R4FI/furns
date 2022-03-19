@@ -1,4 +1,4 @@
-import { faArrowRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+import {faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
@@ -20,19 +20,19 @@ const Header = () => {
       <Nav.Link className="navcolor mt-2 ms-3" as={Link} to={"/officefurniture"}>Office Furniture</Nav.Link>
       <Nav.Link className="navcolor mt-2 ms-3" as={Link} to={"/hospitalfurniture"}>Hospital Furniture</Nav.Link>
       <Nav.Link className="navcolor mt-2 ms-3" as={Link} to={"/about"}>About Us</Nav.Link>
-      <Nav.Link className="navcolor mt-2 ms-3" as={Link} to={"/dashboard"}>Dashboard</Nav.Link>
+     
       
       
         {
           user?.email? 
-            <button className="logoutbtn mt-2" onClick={logout}>Log Out <FontAwesomeIcon icon={faArrowRightToBracket}/> </button>
+            <button className="logoutbtn" onClick={logout}>Log Out</button>
                 :
                 <Nav.Link className="navcolor  mt-2 ms-5" as={Link} to={"/login"}><FontAwesomeIcon  icon={faUser}/> </Nav.Link>
 
         }     
         <Navbar.Text className="ms-3">
                             {user?.email &&
-                                <span className="m-auto">{user?.displayName}</span>
+                             <Link to="/profile"><span   className="spanname ms-auto">{user?.displayName} </span> </Link> 
                             }
                             <span><img className="profile" src={user?.photoURL} alt="" /></span>
 

@@ -46,27 +46,30 @@ const ManageOrder = () => {
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Date</th>
-                                <th>Status</th>
+                                <th>Adress</th>
                                 <th>Action</th>
+                                <th>Payment</th>
                             </tr>
                         </thead>
                         {allOrders?.map((order, index) => (
                             <tbody>
                                 <tr>
-                                    <td>{index}</td>
+                                    <td>{index+1}</td>
                                     <td>{order?.bookname}</td>
                                     <td>{order?.name}</td>
                                     <td>{order?.email}</td>
                                     <td>{order?.phone}</td>
                                     <td>{order?.createdAt}</td>
+                                   
+
                                     <td>{order?.Address}</td>
-                                    {/* <td><span className="status">{order?.status}</span></td> */}
                                     <button
                                         onClick={() => handleDeleteOrder(order._id)}
                                        
                                         className="btn btn-danger delete-btn px-3 py-2">Delete</button>
-                                  
-                                        {/* <button onClick={()=>handleUpdate(order._id)} className="btn btn-danger delete-btn px-3 py-2">Update</button> */}
+                                         <td>{order?.payment? 'Paid' :
+                                        'Due'
+                                    }</td>
                                 </tr>
                                
                             </tbody>

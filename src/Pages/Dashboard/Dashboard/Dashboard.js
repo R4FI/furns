@@ -18,7 +18,7 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-import { AddBox, AddModerator, Article, Assignment, Home,ModeEdit, Payment, StarRate } from '@mui/icons-material';
+import { AddBox, AddModerator, Article, Assignment, Home,ModeEdit,  StarRate } from '@mui/icons-material';
 import AddProduct from '../AddProducts/AddProduct';
 import MakeAdmin from '../Admin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
@@ -26,6 +26,8 @@ import MyOrder from '../MyOrder/MyOrder';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import ManageOrder from '../ManageOrder/ManageOrder';
 import Reviews from '../Reviews/Reviews';
+import Payment from '../Payment/Payment';
+import'./Dashboard.css';
 const drawerWidth = 240;
 
 
@@ -89,7 +91,7 @@ export default function Dashboard() {
   let { path, url } = useRouteMatch();
   return (
   
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} className="dashbox">
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -100,6 +102,7 @@ export default function Dashboard() {
             edge="start"
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
+           
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
@@ -127,37 +130,26 @@ export default function Dashboard() {
         </DrawerHeader>
         <Divider />
 
-        <Link to="/home"><Button startIcon={<Home/>}>Home</Button></Link> 
-        { !admin &&
-          <Box>
-          <Link to={`${url}/paylink`}><Button startIcon={<Payment/>}>Pay Link</Button></Link>  <br />
+       
+       { !admin &&
+          <Box className="userdash">
+          <Link to="/home"><Button startIcon={<Home/>}>Home</Button></Link> 
           <Link to={`${url}/myorder`}><Button startIcon={<Article />}>My Order</Button></Link>  <br />
-          <Link to={`${url}/review`}><Button startIcon={<StarRate />}>Review</Button></Link><br />
-         
-         
+          <Link to={`${url}/review`}><Button startIcon={<StarRate />}>Review</Button></Link><br />         
            </Box>
-          }
+}
+         
         
-         { admin &&
-          <Box>
-          <Link to={`${url}/manageOrder`}><Button startIcon={<ModeEdit />}>Manage All Order</Button></Link>
-          <Link to={`${url}/addproduct`}><Button startIcon={<AddBox/>}>Add Products</Button></Link> <br />
-          <Link to={`${url}/makeAdmin`}><Button startIcon={<AddModerator/>}>Make Admin</Button></Link> <br />
-          <Link to={`${url}/manageProduct`}><Button startIcon={<Assignment />}>Manage Product</Button></Link><br /> 
+         {admin &&
+          <Box  className="admindash">
+          <Link className="dashtext"  to="/home"><Button className="dastbtn">Home</Button></Link> <br />
+          <Link className="dashtext"  to={`${url}/manageOrder`}><Button className="dastbtn">Manage All Order</Button></Link> <br />
+          <Link className="dashtext"  to={`${url}/addproduct`}><Button className="dastbtn">Add Products</Button></Link> <br />
+          <Link className="dashtext"  to={`${url}/makeAdmin`}><Button className="dastbtn">Make Admin</Button></Link> <br />
+          <Link className="dashtext"  to={`${url}/manageProduct`}><Button className="dastbtn">Manage Product</Button></Link><br /> 
           
           </Box>
-          }
-        {/* <List>
-         
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
+}
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
@@ -166,15 +158,13 @@ export default function Dashboard() {
             <Switch>
         <Route exact path={`${path}/addproduct`}>
           <AddProduct></AddProduct>
-        </Route>
-        <Route exact path={`${path}/ordermy`}>
-      
-        </Route>
-        <Route exact path= {`${path}/review`}>
+        </Route> 
+        <Route  path= {`${path}/paylink/:orders`}>
+          <Payment></Payment>
         </Route>
         <Route exact path= {`${path}/myorder`}>
           <MyOrder></MyOrder>
-        </Route>
+          </Route>
       </Switch>
         </Typography>
         <Route exact path= {`${path}/makeAdmin`}>

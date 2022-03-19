@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 const ManageHospital = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:7000/officefurn')
+        fetch('http://localhost:7000/hospitalfurn')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products]);
@@ -12,7 +12,7 @@ const ManageHospital = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, You want to delete your order')
         if (proceed) {
-            const url = `http://localhost:7000/officefurn/${id}`;
+            const url = `http://localhost:7000/hospitalfurn/${id}`;
             fetch (url , {
                 method: 'DELETE'
             })
@@ -31,7 +31,7 @@ const ManageHospital = () => {
         <div>
              <div className="allOrder-container">
             <div className="container">
-                <h2 className="allOrder-title pb-3">All Products: {products.length}</h2>
+                <h2 className="allOrder-title pb-3">Hospital Furniture: {products.length}</h2>
                 
                 <div className="allOrder-table">
                     <Table striped bordered hover>

@@ -14,7 +14,7 @@ const OfficeFurniture = () => {
         <div>
             <Header></Header>
             <Container>
-                <div className="row g-4 offercard">
+                <div className="row g-5 offercard">
                         {
                             office.map(offer=>
                                 

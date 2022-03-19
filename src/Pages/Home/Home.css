@@ -1,22 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+body{
+  overflow-x: hidden;
+  
+}
 .bttncolor{
-    background-color:  rgb(255, 112, 4) !important;
+    background-color: #C04000 !important;
     margin: auto;
     border: none;
     padding: 10px 15px;
     font-family: 'Nunito', sans-serif;
     font-size: 19px;
     color: azure;
+    border-radius: 35px;
     }
-
+        .font4{
+            font-family: 'Raleway', sans-serif;
+            font-size: 26px;
+            color: black !important;
+        }
+   
+        .font5{
+            font-size: 55px !important;
+            font-family: 'Fredoka One', cursive;
+            color: black !important;
+        }
+   
+        .font6{
+            font-size: 22px !important;
+            color: black !important;
+        }
    
     .font1{
         font-family: 'Raleway', sans-serif;
-        font-size: 20px;
+        font-size: 26px;
     }
-    
+    .font2{
+        font-size: 55px !important;
+        font-family: 'Fredoka One', cursive;
+    }
+    .font3{
+        font-size: 22px !important;
+    }
    /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
         .carouselBg{
@@ -25,9 +52,13 @@
             width: 100vw;
         }
         .captionposition{
-            top: 40% !important;
-            bottom: 60% !important;
+            top: 20% !important;
+            bottom: 105% !important;
         }  
+        .captionposition2{
+          top: 20% !important;
+          bottom: 110% !important;
+      }  
     }
 
     /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -61,16 +92,26 @@
             width: 100vw;
            
         }
+        
     }
     /* Extra large devices (large laptops and desktops, 1200px and up) */
     @media only screen and (min-width: 1200px) {
         .carouselBg{
             height: 100vh;
             width: 100vw;
+            margin-top: 25px;
         }
-
         .captionposition{
-            top: 50%;
-            bottom: 50%;
+            top: 10%;
+            bottom: 125%;
         }  
+        .captionposition2{
+            top: 35%;
+            bottom: 125%;
+        }  
+
+
     }
+
+   
+      

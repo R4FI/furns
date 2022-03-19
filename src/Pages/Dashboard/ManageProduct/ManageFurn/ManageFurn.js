@@ -23,6 +23,7 @@ const ManageFurn = () => {
                         const remainingOrder = products.filter(product => product._id !== id);
                       setProducts(remainingOrder);
                     }
+                   
                 });
         }
 
@@ -48,7 +49,7 @@ const ManageFurn = () => {
                         {products?.map((product, index) => (
                             <tbody>
                                 <tr>
-                                    <td>{index}</td>
+                                    <td>{index+1}</td>
                                     <td>{product?.name}</td>
                                     <td>${product?.price}</td>
                                     <button

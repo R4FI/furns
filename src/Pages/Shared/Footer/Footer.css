@@ -7,22 +7,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
-.about{
-    font-family: 'Nunito', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-}
-.about2{
-    font-family: 'Nunito', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 25px;
-}
-.aboutp{
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-}
+
 .list{
     list-style: none;
 }

@@ -11,6 +11,8 @@ const useFirebase = () =>{
         const [admin,setAdmin]  = useState(false);
         const auth = getAuth();
         const googleProvider = new GoogleAuthProvider();
+      
+      
         // register new user
         const newUser =(email,password,name,history)=>{
             createUserWithEmailAndPassword(auth,email,password)

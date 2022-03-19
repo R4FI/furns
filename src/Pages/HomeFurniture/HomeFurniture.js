@@ -15,7 +15,7 @@ const HomeFurniture = () => {
         <div>
             <Header></Header>
             <Container>
-                <div className="row g-4 offercard"> 
+                <div className="row g-4  offercard"> 
                 {
                     home.map(offer=>
                         <HomeFurnitureSingle

@@ -7,6 +7,7 @@ import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Header from '../../Shared/Header/Header';
 const LogIn = () => {
     const [loginData,setloginData] = useState({});
     const {loginUser,signInUsingGoogle} = useAuth();
@@ -34,6 +35,7 @@ const LogIn = () => {
     }
     return (
         <div>
+            <Header></Header>
             <Container className="login">
                 <Row  className="d-flex justify-content-center align-items-center">
 
@@ -51,7 +53,7 @@ const LogIn = () => {
                         name="email"
                         variant="standard" /> <br/>
 
-                        <TextField id="standard-basic" style={{m:1 ,width:'75%'}}
+                        <TextField id="standard-basic" className="mt-3" style={{m:1 ,width:'75%'}}
                         label="Password"  required
                         type="password" onBlur={handleOnBlur}
                         name="password"

@@ -15,7 +15,7 @@ const HospitalFurniture = () => {
         <div>
            <Header></Header>
            <Container>
-                <div className="row g-4 offercard">
+                <div className="row g-5 offercard">
                         {
                             hospital.map(offer=>
                                 

@@ -8,9 +8,10 @@ const Footer = () => {
         <div className="foot">
            <Container>
                <Row className="d-flex">
-                   <Col style={{textAlign:'left'}} md={4}>
-                        <h3 className="about">About us</h3>
-                        <p className="aboutp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                   <Col style={{textAlign:'left'}} md={5}>
+                        <h3>About us</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                              when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                    </Col>
 
@@ -26,8 +27,8 @@ const Footer = () => {
                    </Col>
 
 
-                   <Col style={{textAlign:'left'}} md={4}>
-                       <h3 className="about">Newalatter</h3>
+                   <Col style={{textAlign:'left'}} md={3}>
+                       <h3 >Newalatter</h3>
                         <Form>
                         <Form.Control type="email" placeholder="Enter email" className="frm" required/>
                         <button className="btttn2">Subscirbe <FontAwesomeIcon className="ms-3" icon={faPaperPlane}/></button>

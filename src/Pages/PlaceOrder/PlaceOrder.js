@@ -1,17 +1,19 @@
+
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import useAuth from '../../hooks/useAuth';
 import Header from '../Shared/Header/Header';
 import './Placeorder.css';
 const PlaceOrder = () => {
-    const { bookingId } = useParams()
+    const { bookingId } = useParams();
     const [buyingDetails, setBuyingDetails] = useState([]);
     const { register, handleSubmit,reset} = useForm();
+    const {user} = useAuth();
     const onSubmit = data => {
-        data.status = 'Pending';
-        console.log(data);
         fetch ('http://localhost:7000/orders',{
             method : 'POST',
             headers :{
@@ -21,38 +23,56 @@ const PlaceOrder = () => {
         })
         .then(res => res.json())
         .then(result=> {
-            if (result.insertedID){
-                alert('Your order successfully added')
-                reset('');
-            }
+            reset();
+            alert('Your order successfully added')
+                    
+            
         })
 
     };
 
 
     // load detail and img
-
     useEffect(() => {
-        fetch(`http://localhost:7000/homefurn/${bookingId}`)
-            .then(res => res.json())
-            .then(data => setBuyingDetails(data));
-    }, [bookingId]);
-
-
-    useEffect(() => {
-        fetch(`http://localhost:7000/officefurn/${bookingId}`)
-            .then(res => res.json())
-            .then(data => setBuyingDetails(data));
-    }, [bookingId]);
-
-
+        const getHome =async ()=>{
+            var Home=await axios.get(`http://localhost:7000/homefurn/${bookingId}`);
+            if(Home?.data)
+            {
+                
+                setBuyingDetails(Home.data);    
+            }
+        }
+        getHome();
+        },[]);
 
 
     useEffect(() => {
-        fetch(`http://localhost:7000/hospitalfurn/${bookingId}`)
-            .then(res => res.json())
-            .then(data => setBuyingDetails(data));
-    }, [bookingId]);
+        const getOffice =async ()=>{
+            var Office =await axios.get(`http://localhost:7000/officefurn/${bookingId}`);
+            if(Office?.data)
+            {
+               
+                setBuyingDetails(Office.data);    
+            }
+        }
+        getOffice();
+        },[]);
+
+
+    useEffect(() => {
+        const getHospital =async ()=>{
+            var Hospital =await axios.get(`http://localhost:7000/hospitalfurn/${bookingId}`);
+            if(Hospital?.data)
+            {
+               
+                setBuyingDetails(Hospital.data);    
+            }
+        }
+        getHospital();
+        },[]);
+
+
+    
 
     return (
         <div>
@@ -65,10 +85,11 @@ const PlaceOrder = () => {
                         <div className="details-container">
                             <div className="order-box">
                                 <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input defaultValue=""  placeholder="Name" {...register("name")} required/>
-                                    <input defaultValue="" placeholder="Email"{...register("Email")} required/>
-                                    <input type="text"{...register("bookname")} required placeholder="Type Product Name" defaultValue=""/>
+                                    <input defaultValue={user?.displayName}  {...register("name")} required/>
+                                    <input defaultValue={user.email} placeholder="Email"{...register("email")} required/>
+                                    <input type="text"{...register("bookname")} required  defaultValue={buyingDetails?.name}/>
                                     <input placeholder="phone number" defaultValue="" required {...register("phone")}/>
+                                    <input  defaultValue={buyingDetails?.price} required {...register("price")}/>
                                     <input type="text" {...register("Address")} required placeholder="Address"/> 
                                     <input type="submit" value="Place Order" />
                                     

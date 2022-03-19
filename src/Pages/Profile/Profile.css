@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+.welcomename{
+    margin-top: 135px;
+    font-size: 35px;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.welcomeprofile{
+    height: 250px;
+    width: 250px;
+}

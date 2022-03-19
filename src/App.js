@@ -17,6 +17,8 @@ import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import AboutUs from './Pages/AboutUS/AboutUs';
+import Profile from './Pages/Profile/Profile';
+
 function App() {
   return (
     <div className="App">
@@ -51,13 +53,20 @@ function App() {
       <PlaceOrder></PlaceOrder>
       </PrivateRoute>
 
-
       <Route exact path="/">
       <Home></Home>
       </Route>
+     
 
       <PrivateRoute path="/dashboard">
         <Dashboard></Dashboard>
+      </PrivateRoute>
+
+   
+
+     
+      <PrivateRoute path="/profile">
+        <Profile></Profile>
       </PrivateRoute>
 
       <Route path="/about">
