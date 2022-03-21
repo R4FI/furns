@@ -1,8 +1,9 @@
-import { Box, Button, Grid, Paper, Stack, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-
+import './MyOrder.css';
+import { Table } from 'react-bootstrap';
+import { Button } from '@mui/material';
 const MyOrder = () => {
     const [orders,setOrders] = useState([]);
     const {user} = useAuth();
@@ -36,39 +37,50 @@ const MyOrder = () => {
     return (
         <div>
             <h3>Products You Ordered :{orders.length}</h3>
-          {orders?.map((order)=>(
+            <Table striped bordered hover>
+                <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Price</th>
+                                <th>Adress</th>
+                                <th>Action</th>
+                                <th>Payment</th>
+                            </tr>
+                        </thead>
+                        {orders?.map((order,index)=>(
+                      
+                      <tbody>
+                     <tr>
+                      <td>{index+1}</td>
+                      <td>{order?.bookname}</td>
+                      <td>{order?.name} </td>
+                      <td>{order?.email}</td>  
+                      <td>{order?.phone}</td> 
+                      <td>{order?.price}</td>
+                      <td>{order?.Address}</td>
+                
+              <td> 
+                 <button className="orderbtn"  onClick={() => handleDeleteOrder(order._id)} variant="outlined">
+                        Delete
+                      </button>
+                      </td>
 
-         
-            <Box className="orderbox">
-            <Paper sx={{ maxWidth: 400, my: 1, mx: 'auto', p: 2 }}>
-        <Grid container wrap="nowrap" spacing={3}>
-          <Grid item>
-           
-          </Grid>
-          <Grid item md >
-            <Typography>{order?.bookname}</Typography>
-            <Typography>{order?.name}</Typography>
-            <Typography>{order?.email}</Typography>
-            <Typography>{order?.phone}</Typography>
-            <Typography>{order?.price}</Typography>
-            <Typography>{order?.Address}</Typography>
-           
-          </Grid>
-         
-        </Grid>
-        <Stack direction="row" spacing={3}>
-              <Button  onClick={() => handleDeleteOrder(order._id)} variant="outlined">
-                Delete
-              </Button> <br/>
-              <Button>{order?.payment ? 'Paid' :
-              
-              <Link to={`dashboard/paylink/${order._id}`}>Pay Now</Link>
-              }</Button>
-            </Stack>
-      </Paper>
-      
-            </Box>
-             ))}
+
+                   <td>   
+                     <button className="btnorder">{order?.payment ? 'Paid' :
+                      
+                      <Link className="orderbtn2" to={`dashboard/paylink/${order._id}`}>Pay Now</Link>
+                      }</button>
+                       </td>
+                           </tr>
+                      </tbody>
+                     ))}
+                </Table>
+        
         </div>
     );
 };

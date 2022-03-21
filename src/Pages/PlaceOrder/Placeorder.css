@@ -7,19 +7,25 @@
 .order-box{
     height: 530px;
     border:1px solid gray;
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 15px;
 }
 .order-box form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 0;
-    margin-top: 35px;
+    padding: 25px 0;
+    margin-top: 15px;
+    
+   
 }
 .order-box input,textarea{
     width: 60%;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding: 5px;
+    margin-top: 25px;
     border-radius: 10px;
 }
 .details-container{
@@ -27,16 +33,19 @@
 }
 
 .placeOrder-details{
-    height: 550px;
+    height: 480px;
     width: 400px;
     margin: 0 auto;
     padding: 10px;
     /* border: 2px solid gray; */
-    box-shadow: 5px 5px 10px rgba(143, 219, 228, 0.781);
+    box-shadow: 5px 5px 10px rgba(171, 247, 255, 0.787);
+    background-color: #BCC6CC;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 .order-img img{
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
 }
 .order-btn{
     color: tomato;

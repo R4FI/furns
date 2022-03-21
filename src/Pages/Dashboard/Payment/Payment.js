@@ -7,6 +7,7 @@ import {
   Elements
 } from '@stripe/react-stripe-js';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const stripePromise = loadStripe('pk_test_51KYs7CKJTqhSIZhtcetUelsLVOWJmgxRIZjBM0bPc56i7psHmD2WFz0qHgAKrykL3pt9YzMnXjxm4lwFs0TAfYGv00ub8IzRrK')
@@ -24,7 +25,8 @@ const Payment = () => {
 
     return (
         <div>
-          <Container className="payment">
+        <Link className="btnback2" to={"/home"}> <button className="btnback">Back to home</button></Link> 
+          <Container className="payment mt-5">
             <h3 style={{textAlign:'left'}}>Product Name: {payment.bookname}</h3>
             <h3 style={{textAlign:'left'}} className="mb-5">Pay: ${payment.price}</h3>
       

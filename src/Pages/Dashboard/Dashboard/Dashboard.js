@@ -105,8 +105,8 @@ export default function Dashboard() {
            
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Dashboard
+          <Typography variant="h4" noWrap component="div">
+          Payment
           </Typography>
         </Toolbar>
       </AppBar>
@@ -131,25 +131,11 @@ export default function Dashboard() {
         <Divider />
 
        
-       { !admin &&
-          <Box className="userdash">
-          <Link to="/home"><Button startIcon={<Home/>}>Home</Button></Link> 
-          <Link to={`${url}/myorder`}><Button startIcon={<Article />}>My Order</Button></Link>  <br />
-          <Link to={`${url}/review`}><Button startIcon={<StarRate />}>Review</Button></Link><br />         
-           </Box>
-}
+    
          
         
-         {admin &&
-          <Box  className="admindash">
-          <Link className="dashtext"  to="/home"><Button className="dastbtn">Home</Button></Link> <br />
-          <Link className="dashtext"  to={`${url}/manageOrder`}><Button className="dastbtn">Manage All Order</Button></Link> <br />
-          <Link className="dashtext"  to={`${url}/addproduct`}><Button className="dastbtn">Add Products</Button></Link> <br />
-          <Link className="dashtext"  to={`${url}/makeAdmin`}><Button className="dastbtn">Make Admin</Button></Link> <br />
-          <Link className="dashtext"  to={`${url}/manageProduct`}><Button className="dastbtn">Manage Product</Button></Link><br /> 
-          
-          </Box>
-}
+
+
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
