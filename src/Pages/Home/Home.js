@@ -30,7 +30,7 @@ const Home = () => {
             <Col md={6}>
             <h4 data-aos="fade-right" data-aos-duration="3000"  style={{textAlign:'left'}} className="font1">Best Seller</h4>
            <h2  data-aos="fade-right" data-aos-duration="3000"  className="font2"  style={{textAlign:'left'}}>Creative Chair</h2> 
-           <p   data-aos="fade-right" data-aos-duration="3000"  className="font3" style={{textAlign:'left'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+           <p   data-aos="fade-right" data-aos-duration="3000"  className="font3" style={{textAlign:'left'}}>Exclusive furniture with afordable price</p>
           <button data-aos="zoom-in" data-aos-duration="3000" style={{float:'left'}} className="bttncolor">Shop Now</button> 
 
             </Col>
@@ -59,7 +59,7 @@ const Home = () => {
             <Col md={6}>
             <h4 data-aos="fade-right" data-aos-duration="3000"  className="font4" style={{textAlign:'left'}} >Best Seller</h4>
            <h2  data-aos="fade-right" data-aos-duration="3000"  className="font5"  style={{textAlign:'left'}}>Creative Sofa</h2> 
-           <p   data-aos="fade-right" data-aos-duration="3000"  className="font6" style={{textAlign:'left'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+           <p   data-aos="fade-right" data-aos-duration="3000"  className="font6" style={{textAlign:'left'}}>Best design and reliable</p>
           <button data-aos="zoom-in" data-aos-duration="3000"   style={{float:'left'}} className="bttncolor">Shop Now</button> 
 
             </Col>

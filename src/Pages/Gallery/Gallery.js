@@ -7,6 +7,9 @@ import './Gallery.css';
 import sofa from "../../Images/Banner/sofa.png";
 import chair from "../../Images/others/chair.png";
 import bed from "../../Images/others/Sleigh-Bed-PNG-HD.png";
+import sofaa from "../../Images/others/sofaaa.png";
+import stylechair from "../../Images/others/stylechair.png";
+import bedsofa from "../../Images/others/bedsofa.png";
 const Gallery = () => {
   const settings = {
     dots: true,
@@ -63,15 +66,8 @@ const Gallery = () => {
           </div>
           <div>
           <Card style={{ width: '18rem',height:'25rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-   
-  </Card.Body>
+  <Card.Img variant="top" src={stylechair} className="w-75 p-3 m-auto"/>
+  
 </Card>
           </div>
           <div>
@@ -81,29 +77,15 @@ const Gallery = () => {
 </Card>
           </div>
           <div>
-          <Card style={{ width: '18rem',height:'25rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-   
-  </Card.Body>
+          <Card className="bgcard5" style={{ width: '18rem',height:'25rem' }}>
+  <Card.Img variant="top" src={bedsofa} className="w-100 p-3 m-auto"/>
+  
 </Card>
           </div>
           <div>
-          <Card style={{ width: '18rem',height:'25rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-   
-  </Card.Body>
+          <Card className="bgcard4" style={{ width: '18rem',height:'25rem' }}>
+  <Card.Img variant="top" src={sofaa} className="w-75 p-3 m-auto"/>
+ 
 </Card>
           </div>
         </Slider>
